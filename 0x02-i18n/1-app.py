@@ -1,4 +1,4 @@
-#!usr/bin/env python3
+#!/usr/bin/env python3
 """
 A simple Flask web app with internationalization and localization support.
 """
@@ -6,6 +6,10 @@ A simple Flask web app with internationalization and localization support.
 from flask import Flask, render_template
 from flask_babel import Babel
 
+"""
+configure the available languages ('en', 'fr')
+Set default locale('en') & default timezone('UTC')
+"""
 class Config:
     LANGUAGES =["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -15,7 +19,7 @@ class Config:
 app = Flask(__name__)
 app.config.from_object(Config)
 
-
+# instantiate the Babel object with the Flask app
 babel = Babel(app)
 
 
@@ -23,7 +27,7 @@ babel = Babel(app)
 def index():
     """
     View function for the root URL ("/").
-    Renders a simple message.
+    Renders the index.html which displays a welcome message.
     """
     return render_template('1-index.html')
 
