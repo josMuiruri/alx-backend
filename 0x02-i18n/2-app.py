@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 
-babel = Babel(app)
+babel = Babel(app, locale_selector=get_locale)
 
 @babel.localeselector
 def get_locale():
