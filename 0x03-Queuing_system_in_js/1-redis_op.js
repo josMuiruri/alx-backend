@@ -15,12 +15,12 @@ client.on("error", (err) => {
 
 // Function to set a new school in redis
 const setNewSchool = (schoolName, value, callback) => {
-  console.log(`Setting value for ${schoolName}...`);
+  console.log(schoolName);
   client.set(schoolName, value, (err, reply) => {
     if (err) {
       console.error(err);
     } else {
-      console.log(`Set operation response: ${reply}`); // will log OK
+      console.log(reply); // will log OK
     }
     if (callback) {
       callback();
@@ -30,12 +30,12 @@ const setNewSchool = (schoolName, value, callback) => {
 
 // Function to display the of school from redis
 const displaySchoolValue = (schoolName, callback) => {
-  console.log(`Getting value for ${schoolName}`);
+  console.log(schoolName);
   client.get(schoolName, (err, result) => {
     if (err) {
       console.error(err);
     } else {
-      console.log(`Value for ${schoolName}: ${result}`);
+      console.log(result);
     }
     if (callback) {
       callback();
