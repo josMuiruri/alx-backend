@@ -5,6 +5,10 @@ const queue = kue.createQueue();
 
 // sendNotification function
 const sendNotification = (phoneNumber, message) => {
+  if (!phoneNumber || !message) {
+    console.error("Missing phone number or message");
+    return;
+  }
   console.log(
     `Sending notification to ${phoneNumber}, with message: ${message}`
   );
