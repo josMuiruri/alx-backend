@@ -10,7 +10,7 @@ client.on("connect", () => {
 
 // Handling connection error
 client.on("error", (err) => {
-  console.error("Redis client not connected to the server");
+  console.error(`Redis client not connected to the server: ${err.message}`);
 });
 
 // Function to delete existing hash
