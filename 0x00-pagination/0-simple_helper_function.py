@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 '''pagination helper function'''
 from typing import Tuple
-''' a func that takes 2 int args & return a tuple containing 
-a start & an end corresponding to the range of indexes
-'''
+'''a func that retrieves the index range from a given page and page size'''
 
 
 def index_range(page: int, page_size: int) -> Tuple:
