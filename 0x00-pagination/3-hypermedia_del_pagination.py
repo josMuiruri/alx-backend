@@ -45,7 +45,6 @@ class Server:
         '''
         if index is None:
             index = 0
-
         # validate the index
         assert isinstance(index, int)
         assert 0 <= index < len(self.indexed_dataset())
